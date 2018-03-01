@@ -44,4 +44,4 @@ rides = []
 
 for i in range(int(rows_tot)):
     r = ride(i, int([i,0]), int([i,1]), int([i,2]), int([i,3]), int([i,4]), int([i,5]))
-    rides.apped(r)
+    rides.append(r)
