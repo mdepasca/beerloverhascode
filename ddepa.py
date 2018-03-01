@@ -6,12 +6,12 @@ inFile = "a_example.in"
 h = np.genfromtxt(inFile, max_rows=1)
 d = np.genfromtxt(inFile, skip_header=1) 
 
-rows_tot = h[0]
-cols_tot = h[1]
-vehicles = h[2]
-rides = h[3]
-bonus = h[4]
-sim_time = h[5]
+rows_tot = int(h[0])
+cols_tot = int(h[1])
+vehicles = int(h[2])
+rides = int(h[3])
+bonus = int(h[4])
+sim_time = int(h[5])
 
 
 class ride:
@@ -43,5 +43,5 @@ class ride:
 rides = []
 
 for i in range(int(rows_tot)):
-    r = ride(i, d[i,0], d[i,1], d[i,2], d[i,3], d[i,4], d[i,5])
+    r = ride(i, int([i,0]), int([i,1]), int([i,2]), int([i,3]), int([i,4]), int([i,5]))
     rides.apped(r)
