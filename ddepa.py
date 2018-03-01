@@ -39,4 +39,8 @@ class ride:
         vehicleDist = abs(vehicleX-self.startX) + abs(vehicleY-self.startY)
         return vehicleDist
 
+rides = []
 
+for i in range(rows_tot):
+    r = ride(d[i,0], d[i,1], d[i,2], d[i,3], d[i,4], d[i,5])
+    rides.apped(r)
