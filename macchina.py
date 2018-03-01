@@ -22,22 +22,29 @@ class Macchina:
         # the internal time of the car is updated to take into account the travel time
         self.actual_time += d_from_actual_to_start
 
+        #time/distance of the ride
+        d_from_start_to_end = np.abs(ride_a-ride_x) + np.abs(ride_b-ride_y)
+
+        if self.actual_time  == ride_s
+            self.points += d_from_start_to_end
         # the car has arrived to the starting point, but it is still to early to start the ride
         if ride_s > self.actual_time:
             # move the time of the car to the starting time of the ride
             self.actual_time = ride_s
 
-        #time/distance of the ride
-        d_from_start_to_end = np.abs(ride_a-ride_x) + np.abs(ride_b-ride_y)
 
         # update the position and time of the car to
         self.actual_x = ride_x
         self.actual_y = ride_y
+
+
+
+
         self.actual_time += d_from_start_to_end
 
         if self.actual_time < self.f:
             self.points += (self.f  - self.actual_time)
-        self.points += d_from_start_to_end
+
 
         self.rides.append(i)
     	return
