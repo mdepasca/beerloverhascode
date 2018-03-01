@@ -15,7 +15,8 @@ sim_time = h[5]
 
 
 class ride:
-    def __init__(self, startX, startY, endX, endY, earliestStart, latestFinish):
+    def __init__(self, Id, startX, startY, endX, endY, earliestStart, latestFinish):
+        self.Id=Id
         self.startX = startX
         self.startY = startY
         self.endX = endX
@@ -42,5 +43,5 @@ class ride:
 rides = []
 
 for i in range(int(rows_tot)):
-    r = ride(d[i,0], d[i,1], d[i,2], d[i,3], d[i,4], d[i,5])
+    r = ride(i, d[i,0], d[i,1], d[i,2], d[i,3], d[i,4], d[i,5])
     rides.apped(r)
