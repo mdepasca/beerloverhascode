@@ -1,8 +1,9 @@
-import numpy
-
 import numpy as np
+import macchina as mc
+import sbuffo as sb
 
 inFile = "a_example.in"
+outFile = inFile.replace('.in', '.out')
 h = np.genfromtxt(inFile, max_rows=1)
 d = np.genfromtxt(inFile, skip_header=1) 
 
@@ -45,3 +46,22 @@ rides = []
 for i in range(int(rows_tot)):
     r = ride(i, int([i,0]), int([i,1]), int([i,2]), int([i,3]), int([i,4]), int([i,5]))
     rides.append(r)
+    
+cars = [mc.Macchina() for iv in range(0, vehicles)]
+
+
+out = open(outFile, 'w')
+for icars in cars:
+  rides_per_car = []
+  line = ""
+  
+  for irides in rides:
+    if(irides.actual_time < sim_time):
+      id_ride = sb.sort_rides_and_take_first(irides, icars)
+      rides_per_car.append(id_ride)
+      line = "%s %d" %(id_ride)
+      icars.give_me_a_ride_object(rides[id_ride])
+      
+  out.write(line + "\n")
+    
+
