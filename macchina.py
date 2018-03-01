@@ -1,9 +1,9 @@
 class Macchina:
-	self.actual_x = 0
-	self.actual_y = 0
-	self.actual_time = 0
-    self.points = 0
-    self.rides = []
+  self.actual_x = 0
+  self.actual_y = 0
+  self.actual_time = 0
+  self.points = 0
+  self.rides = []
 
     def give_me_a_ride_object(self, ride):
         a = ride.a
@@ -40,4 +40,4 @@ class Macchina:
         self.points += d_from_start_to_end
 
         self.rides.append(i)
-    	return
+      return
