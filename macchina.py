@@ -1,9 +1,9 @@
 class Macchina:
-  self.actual_x = 0
-  self.actual_y = 0
-  self.actual_time = 0
-  self.points = 0
-  self.rides = []
+    actual_x = 0
+    actual_y = 0
+    actual_time = 0
+    points = 0
+    rides = []
 
     def give_me_a_ride_object(self, ride):
         a = ride.a
@@ -25,7 +25,7 @@ class Macchina:
         #time/distance of the ride
         d_from_start_to_end = np.abs(ride_a-ride_x) + np.abs(ride_b-ride_y)
 
-        if self.actual_time  == ride_s
+        if self.actual_time  == ride_s:
             self.points += d_from_start_to_end
         # the car has arrived to the starting point, but it is still to early to start the ride
         if ride_s > self.actual_time:
@@ -47,4 +47,4 @@ class Macchina:
 
 
         self.rides.append(i)
-      return
+    	return

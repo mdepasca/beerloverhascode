@@ -44,7 +44,7 @@ class ride:
 rides = []
 
 for i in range(int(rows_tot)):
-    r = ride(i, int([i,0]), int([i,1]), int([i,2]), int([i,3]), int([i,4]), int([i,5]))
+    r = ride(i, int(d[i,0]), int(d[i,1]), int(d[i,2]), int(d[i,3]), int(d[i,4]), int(d[i,5]))
     rides.append(r)
     
 cars = [mc.Macchina() for iv in range(0, vehicles)]
@@ -56,11 +56,12 @@ for icars in cars:
   line = ""
   
   for irides in rides:
-    if(irides.actual_time < sim_time):
-      id_ride = sb.sort_rides_and_take_first(irides, icars)
+    if(icars.actual_time < sim_time):
+      id_ride = sb.sort_rides_and_take_first(rides, icars)
       rides_per_car.append(id_ride)
-      line = "%s %d" %(id_ride)
+      line = "%s %d" %(line, id_ride)
       icars.give_me_a_ride_object(rides[id_ride])
+      rides[id_ride].set_as_done()
       
   out.write(line + "\n")
     
